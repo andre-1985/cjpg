@@ -1,0 +1,9 @@
+{#{% for drawEuromillions in this.allDrawsEuromillions %}
+    {{ component('draw_card_euromillions', {'id': drawEuromillions.id}) }}
+{% endfor %}#}
+
+<div{{ attributes }}>
+    {% for drawEuromillions in this.allDrawsEuromillions %}
+        {{ component('draw_card_euromillions', {'id': drawEuromillions.id}) }}
+    {% endfor %}
+</div>

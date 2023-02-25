@@ -1,0 +1,20 @@
+<div{{ attributes }}>
+    <input
+        type="month"
+        min="2004-02"
+        max="2022-12"
+        name="query"
+        value="{{ query }}"
+        data-action="live#update"
+    >
+
+    {% if this.drawsEuromillions|length > 0 %}
+        <div data-loading="addClass(opacity-50)">
+            {% for drawEuromillions in this.drawsEuromillions %}
+                {{ component('draw_card_euromillions', {'id': drawEuromillions.id}) }}
+            {% endfor %}
+        </div>
+    {% else %}
+        <div>Aucun tirages trouvé !</div>
+    {% endif %}
+</div>
