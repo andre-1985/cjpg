@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CJPG - Essayez vos numéros Euromillions{% endblock %}
+
+{% block body %}
+<div data-turbo="false" class="container-column">
+    {{ component('explication_text_grid_euromillions') }}
+    {{ form_start(form, { 'attr': { 'id': 'user-grid_euromillions-form' } }) }}
+        <div id="balls-grid">
+            {% for chkBall in form.gridEuromillions.userBallsSelection %}
+                <div class="ball-euromillions">
+                    {{ form_widget(chkBall, { 'attr': { 'class': 'checkbox-ball-euromillions' } }) }}
+                    {{ form_label(chkBall, null, { 'label_attr': { 'class': 'label-ball-euromillions' } }) }}
+                </div>
+            {% endfor %}
+        </div>
+        <div id="stars-grid">
+            {% for chkStar in form.gridEuromillions.userStarsSelection %}
+                <div class="star-euromillions">
+                    {{ form_widget(chkStar, { 'attr': { 'class': 'checkbox-star-euromillions' } }) }}
+                    {{ form_label(chkStar, null, { 'label_attr': { 'class': 'label-star-euromillions' } }) }}
+                </div>
+            {% endfor %}
+        </div>
+        <div id="validate-grid-euromillions">
+                {% if form_errors(form) %}
+                        <div class="form-error">
+                                {{ form_errors(form) }}
+                        </div>
+                {% endif %}
+                {{ form_widget(form.validate, { 'attr': { 'class': 'validate-btn-euromillions' } }) }}
+        </div>
+    {{ form_end(form) }}
+</div>
+{#<script src="{{ asset("js/scriptGridEuromillions.js") }}"></script>#}
+{% endblock %}

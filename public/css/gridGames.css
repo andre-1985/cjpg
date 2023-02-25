@@ -1,0 +1,181 @@
+#user-grid_loto-form,
+#user-grid_euromillions-form {
+    margin: 1em;
+    border-radius: 1em;
+    box-shadow: .1em .1em 1em black;
+    width: max-content;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#balls-grid,
+#luckynums-grid,
+#stars-grid {
+    display: grid;
+    column-gap: .5em;
+    row-gap: .5em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    justify-items: center;
+}
+
+#balls-grid {
+    grid-template-columns: repeat(10, 1fr);
+    margin-right: 1em;
+}
+
+#stars-grid,
+#luckynums-grid {
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: 1em;
+}
+
+.ball-loto,
+.luckynum-loto,
+.ball-euromillions,
+.star-euromillions {
+    width: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input.checkbox-ball-loto,
+input.checkbox-luckynum-loto,
+input.checkbox-ball-euromillions,
+input.checkbox-star-euromillions {
+    opacity: 0;
+    position: absolute;
+}
+
+.label-ball-loto,
+.label-lucky-number,
+.label-ball-euromillions,
+.label-star-euromillions {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    line-height: 3em;
+    font-family: 'Comic Sans MS', 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.label-ball-loto,
+.label-lucky-number,
+.label-ball-euromillions {
+    width: 4em;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: .1em .1em 1em rgba(0, 0, 0, 0.250);
+}
+
+input.checkbox-ball-loto:checked + .label-ball-loto,
+input.checkbox-luckynum-loto:checked + .label-lucky-number,
+input.checkbox-ball-euromillions:checked + .label-ball-euromillions,
+input.checkbox-star-euromillions:checked + .label-star-euromillions {
+    color: white;
+}
+
+#validate-grid-euromillions,
+#validate-grid-loto {
+    min-width: 100%;
+    text-align: center;
+    margin: 0 0 1em;
+}
+
+.validate-btn-loto,
+.validate-btn-euromillions {
+    font-family: 'Metropolis-Bold', 'Courier New', Courier, monospace;
+    border-radius: 2em;
+    padding: .4em 1em;
+    font-size: 100%;
+}
+
+/* LOTO */
+
+#luckynums-grid .luckynum-loto:last-child {
+    align-items: center;
+    grid-column: span 3;
+}
+
+.label-ball-loto {
+    color: var(--bleu_france);
+}
+
+.label-lucky-number {
+    color: var(--rouge_france);
+}
+
+input.checkbox-ball-loto:checked + .label-ball-loto {
+    background-color: var(--bleu_france);
+}
+
+input.checkbox-luckynum-loto:checked + .label-lucky-number {
+    background-color: var(--rouge_france);
+}
+
+.validate-btn-loto {
+    color: var(--blanc_france);
+    background-color: var(--bleu_france);
+    border: solid var(--rouge_france) .2em;
+}
+
+.validate-btn-loto:hover {
+    color: var(--blanc_france);
+    background-color: var(--rouge_france);
+    border: solid var(--bleu_france) .2em;
+}
+
+.validate-btn-loto:active {
+    color: var(--blanc_france);
+    background-color: var(--rouge_france);
+    border: solid var(--rouge_france) .2em;
+}
+
+/* EUROMILLIONS */
+
+.star-euromillions {
+    height: 3em;
+}
+
+input.checkbox-star-euromillions {
+    margin-top: .2em;
+}
+
+input.checkbox-ball-euromillions:checked + .label-ball-euromillions {
+    background-color: var(--bleu_europe);
+}
+
+.label-star-euromillions {
+    padding-top: .1em;
+    width: 3em;
+    line-height: 3em;
+    background-image: url("../medias/white-star.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: var(--or_euromillions);
+}
+
+input.checkbox-star-euromillions:checked + .label-star-euromillions {
+    background-image: url("../medias/gold-star.png");
+}
+
+.validate-btn-euromillions {
+    color: var(--or_euromillions);
+    background-color: var(--bleu_europe);
+    border: solid var(--or_euromillions) .2em;
+}
+
+.validate-btn-euromillions:hover {
+    color: var(--bleu_europe);
+    background-color: var(--or_euromillions);
+    border: solid var(--bleu_europe) .2em;
+}
+
+.validate-btn-euromillions:active {
+    color: var(--bleu_europe);
+    background-color: var(--or_euromillions);
+    border: solid var(--or_euromillions) .2em;
+}

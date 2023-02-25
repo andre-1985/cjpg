@@ -1,0 +1,192 @@
+.user_selection {
+    padding: .5em;
+    border-radius: 2em;
+    box-shadow: .1em .1em 1em rgba(0, 0, 0, 0.250);
+    margin: 1em 0;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    text-transform: capitalize;
+}
+
+.user_selection h2 {
+    text-align: center;
+    margin: auto 0;
+}
+
+.user_selection-numbers {
+    margin-bottom: .5em;
+}
+
+.user_selection-numbers,
+.user_selection-numbers div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userResultTable {
+    box-shadow: .1em .1em 1em black;
+    text-transform: capitalize;
+    text-align: center;
+    margin: 1em;
+    border: solid black .1em;
+    border-collapse: collapse;
+    border-radius: 1em;
+    font-weight: bolder;
+    letter-spacing: .1em;
+}
+
+.loto-resultTitleRow,
+.euromillions-resultTitleRow {
+    position: sticky;
+    top: 70px;
+}
+
+.userResultTable th, td {
+    max-width: min-content;
+    padding: .5em;
+}
+
+.userResultTable td {
+    border: solid black .1em;
+}
+
+.userResultTable thead th:first-child {
+    border-top-left-radius: 1em;
+}
+
+.userResultTable thead th:last-child {
+    border-top-right-radius: 1em;
+}
+
+.loto-resultTitleRow div,
+.euromillions-resultTitleRow div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.75em;
+}
+
+.userResultTable tbody > tr {
+    height: 2.5em;
+    line-height: .7em;
+}
+
+.userResultTable tbody > th {
+    background-color: var(--light_rouge_france);
+}
+
+.userResultTable tbody > tr:nth-child(odd) {
+    background-color: blanchedalmond;
+}
+
+.table-win_balls-loto,
+.table-loose_balls-loto,
+.table-win_luckyNumber,
+.table-loose_luckyNumber,
+.table-win_balls-euromillions,
+.table-loose_balls-euromillions,
+.table-win_stars,
+.table-loose_stars {
+    width: 3em;
+    line-height: 3em;
+    border-radius: 50%;
+    box-shadow: .1em .1em 1em rgba(0, 0, 0, 0.250);
+}
+
+.table_icon-ball-loto,
+.table_icon-luckynum-loto,
+.table_icon-ball-euromillions,
+.table_icon-star {
+    margin: 0 .25em;
+    border-radius: 50%;
+    box-shadow: .1em .1em 1em rgba(0, 0, 0, 0.250);
+    height: 1em;
+    width: 1em;
+}
+
+.table-win_balls-loto,
+.table-win_luckyNumber,
+.table-win_balls-euromillions,
+.table-win_stars {
+    color: white;
+}
+
+.table-loose_balls-loto,
+.table-loose_luckyNumber,
+.table-loose_balls-euromillions,
+.table-loose_stars {
+    background-color: white;
+}
+
+/* LOTO */
+
+#user_selection-loto {
+    width: 18em;
+}
+
+#userResultTable-loto thead > tr {
+    background-color: var(--light_bleu_france);
+}
+
+.loto-resultTitleRow {
+    background: linear-gradient(to right, var(--bleu_france), white, var(--rouge_france));
+}
+
+.table_icon-ball-loto,
+.table-win_balls-loto {
+    background-color: var(--bleu_france);
+}
+
+.table_icon-luckynum-loto,
+.table-win_luckyNumber {
+    background-color: var(--rouge_france);
+}
+
+.table-loose_balls-loto {
+    color: var(--bleu_france);
+}
+
+.table-loose_luckyNumber {
+    color: var(--rouge_france);
+}
+
+/* EUROMILLIONS */
+
+#user_selection-euromillions {
+    width: 21em;
+}
+
+#user_selection-euromillions .table-win_stars {
+    margin: 0 .1em;
+}
+
+.euromillions-resultTitleRow {
+    background-color: white;
+}
+
+.table_icon-ball-euromillions,
+.table-win_balls-euromillions {
+    background-color: var(--bleu_europe);
+}
+
+.table_icon-star,
+.table-win_stars,
+.table-loose_stars {
+    background-image: url("../medias/gold-star.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.table_icon-star,
+.table-win_stars,
+.table-loose_stars {
+    padding-top: .1em;
+    border-radius: unset;
+    box-shadow: unset;
+}
+
+.table-loose_stars {
+    background-color: unset;
+    background-image: url("../medias/white-star.png");
+}

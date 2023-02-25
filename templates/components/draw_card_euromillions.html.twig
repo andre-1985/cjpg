@@ -1,0 +1,28 @@
+<a href="{{ path('app_draw_euromillions') }}" class="draw_card" id="draw_card_euromillions">
+    <h4 class="date-card">{{ this.drawEuromillions.drawDay }}<br>{{ this.drawEuromillions.drawDate|date('d/m/Y') }}</h4>
+    <h4 class="draw_id-card">Tirage<br>N° {{ this.drawEuromillions.id }}</h4>
+
+    {% set winBalls = this.drawEuromillions.ascendingWinningBalls|trim('-') %}
+    {% set balls = winBalls|split('-') %}
+
+    {% for ball in balls %}
+        <div class="wins_balls-euromillions">{{ ball }}</div>
+    {% endfor %}
+
+    {% set winStars = this.drawEuromillions.ascendingWinningStars|trim('-') %}
+    {% set stars = winStars|split('-') %}
+
+    {% for star in stars %}
+        <div class="wins_stars">{{ star }}</div>
+    {% endfor %}
+
+    {% if this.drawEuromillions.rankReport1 == 0 %}
+        <p class="else_win_loose" id="else_win_loose-euromillions">
+            Cagnotte non remportée
+        </p>
+    {% else %}
+        <p class="else_win_loose" id="else_win_loose-euromillions">
+            Cagnotte remportée : {{ this.drawEuromillions.rankReport1|number_format(0, ',', ' ') }} €
+        </p>
+    {% endif %}
+</a>

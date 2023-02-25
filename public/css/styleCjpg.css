@@ -1,0 +1,94 @@
+@import "gameCards.css";
+@import "drawCards.css";
+@import "explicationTextGrid.css";
+@import "gridGames.css";
+@import "userResults.css";
+
+* {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+#body-header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    background: linear-gradient(to right, var(--bleu_europe), var(--light_bleu_france));
+}
+
+#site-title {
+    margin: 0;
+    font-size: 1.5em;
+    font-family: 'Metropolis-Bold', 'Courier New', Courier, monospace;
+    color: var(--or_euromillions);
+    text-align: left;
+    text-transform: uppercase;
+    padding: 1em;
+}
+
+#nav-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#nav-header h1 {
+    border-right: solid .2em var(--rouge_france);
+}
+
+#nav-header > a {
+    text-align: center;
+    text-transform: capitalize;
+    margin: 1em;
+    max-width: 10em;
+    color: white;
+}
+
+#nav-header a:hover {
+    color: var(--or_euromillions);
+}
+
+#nav-header a:active {
+    color: var(--rouge_france);
+}
+
+.container,
+.container-column {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-column {
+    background-color: white;
+    flex-flow: column;
+}
+
+#welcome-text {
+    width: 100%;
+    margin: .5em 2em;
+    line-height: 2em;
+    letter-spacing: .1em;
+    font-family: 'Metropolis-Bold', 'Courier New', Courier, monospace;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 1em;
+    box-shadow: .1em .1em 1em black;
+}
+
+#welcome-text h2 {
+    margin-bottom: .5em;
+}
+
+.form-error {
+    width: fit-content;
+}

@@ -1,0 +1,128 @@
+.explication_bloc {
+    margin: 1em;
+    letter-spacing: .1em;
+    padding: .5em 1em 1em;
+    font-weight: 600;
+    border-radius: 1em;
+    box-shadow: .1em .1em 1em black;
+    display: flex;
+    flex-flow: column;
+    font-size: 1.25em;
+    align-items: center;
+    text-align: center;
+}
+
+.explication_bloc h2 {
+    width: max-content;
+    text-transform: capitalize;
+    margin-bottom: 1em;
+}
+
+.explication_text {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, min-content);
+    justify-items: center;
+}
+
+.explication_text h3, .explication_text1, .explication_text ul, .explication_text2, .explication_text>p:nth-of-type(1), .explication_text p:last-child {
+    grid-column: span 2;
+    text-align: center;
+}
+
+.explication_text h3 {
+    width: max-content;
+    margin-bottom: 1em;
+    text-decoration: underline;
+}
+
+.explication_text1,
+.explication_text2 {
+    display: flex;
+}
+
+.explication_text1 {
+    grid-row: 2;
+}
+
+.explication_text1 p {
+    margin-right: .5em;
+}
+
+.explication_1_1,
+.explication_1_2 {
+    margin: .5em 0;
+    padding: .1em .25em;
+    grid-row: 3;
+    font-weight: normal;
+    text-transform: uppercase;
+    display: grid;
+    align-items: center;
+}
+
+.explication_1_1 {
+    grid-column: 1;
+}
+
+.explication_1_2 {
+    grid-column: 2;
+}
+
+.explication_1_1_1,
+.explication_1_2_1 {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.explication_1_1_2,
+.explication_1_2_2 {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.icon-ball-loto,
+.icon-ball-euromillions {
+    grid-row: 1;
+    grid-column: 2;
+}
+.icon-ball-loto,
+.icon-luckynum-loto,
+.icon-ball-euromillions,
+.icon-star-euromillions {
+    width: 1.5em;
+    height: 1.5em;
+    margin-top: .25em;
+    margin-left: .5em;
+    border-radius: 50%;
+    box-shadow: .1em .1em 1em rgba(0, 0, 0, 0.250);
+}
+
+.icon-luckynum-loto,
+.icon-star-euromillions {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.icon-ball-loto {
+    background-color: var(--bleu_france);
+}
+
+.icon-luckynum-loto {
+    background-color: var(--rouge_france);
+}
+
+.icon-ball-euromillions {
+    background-color: var(--bleu_europe);
+}
+
+.icon-star-euromillions {
+    border-radius: unset;
+    box-shadow: unset;
+    background-image: url("../medias/gold-star.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.explication_text2 {
+    grid-row: 4;
+}

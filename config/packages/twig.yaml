@@ -3,4 +3,5 @@ twig:
 
 when@test:
     twig:
+        grid_euromillions_form: ['checkbox_grid_euromillions.html.twig', 'vendor/symfony/twig-bridge/Resources/views/Form/checkbox_grid_euromillions.html.twig']
         strict_variables: true

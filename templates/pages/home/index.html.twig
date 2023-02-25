@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Acceuil - Combien J'ai Pas Gagné ?{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div id="welcome-text">
+        <h2 id="welcome-text-title">Bienvenue sur Combien J'ai Pas Gagné (CJPG?) !</h2>
+        <p id="welcome-text-paragraph">
+            Si vous avez déjà tenté votre chance au Loto, à l'Euromillions ou n'importe quelle autre loterie, la question "Mes numéros sont-ils déjà sortis ?" vous a certainement traversé l'esprit !<br>
+            Et bien moi oui et j'ai créé ce site pour y répondre. Si vous aussi vous êtes curieux de savoir si vous avez raté le gros lot avec vos numéros fétiche n'hésitez pas à essayer !
+        </p>
+    </div>
+    {{ component('game_card_loto') }}
+    {{ component('game_card_euromillions') }}
+</div>
+{% endblock %}

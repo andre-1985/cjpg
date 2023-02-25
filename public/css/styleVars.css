@@ -1,0 +1,19 @@
+:root {
+    background-color: white;
+    --liens_sticky: 4em;
+    --taille_cases_jeux: 15em;
+    --largeur_lien_acceuil: 6em;
+
+    /* VARIABLES COULEURS */
+
+    --bleu_france: #0055A4;
+    --light_bleu_france: hsla(209, 100%, 32%, 0.75);
+    --blanc_france: #fff;
+    --light_blanc_france: hsla(0, 0%, 100%, 0.75);
+    --rouge_france: #EF4135;
+    --light_rouge_france: hsla(4, 85%, 57%, 0.75);
+    --bleu_europe: #003399;
+    --light_bleu_europe: hsla(220, 100%, 30%, 0.75);
+    --or_euromillions: #eebb05;
+    --light_or_euromillions: hsla(47, 96%, 48%, 0.75);
+}

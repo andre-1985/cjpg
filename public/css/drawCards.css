@@ -1,0 +1,135 @@
+.draw_card {
+    color: black;
+    text-decoration: none;
+    max-width: 25em;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 2em 1em;
+    padding: .5em 1em;
+    border-radius: 1em;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    align-items: center;
+    justify-items: center;
+    letter-spacing: .05em;
+}
+
+.date-card,
+.draw_id-card,
+.else_win_loose,
+.title-secondDraw,
+.else_win_looseSecondDraw {
+    padding: .5em;
+}
+
+.date-card,
+.draw_id-card,
+.else_win_loose,
+.title-secondDraw,
+.else_win_looseSecondDraw {
+    font-size: 1.25em;
+}
+
+.date-card {
+    margin-right: auto;
+    grid-column: 1 / 4;
+}
+
+.draw_id-card {
+    margin-left: auto;
+    grid-column: 4 / 8;
+}
+
+.wins_balls-loto,
+.win_luckyNumber,
+.wins_balls-lotoSecondDraw,
+.wins_balls-euromillions,
+.wins_stars {
+    font-weight: bold;
+    margin: 0 .1em;
+    width: 3em;
+    color: white;
+    grid-row: 2;
+}
+
+.wins_balls-loto,
+.win_luckyNumber,
+.wins_balls-lotoSecondDraw,
+.wins_balls-euromillions {
+    line-height: 3em;
+    border-radius: 50%;
+    box-shadow: .1em .1em 1em rgba(0, 0, 0, 0.250);
+}
+
+.else_win_loose,
+.else_win_looseSecondDraw {
+    grid-row: 3;
+    grid-column: span 7;
+}
+
+    /* LOTO */
+
+#draw_card_loto {
+    box-shadow: var(--bleu_france) 4px 4px 20px;
+    border: solid var(--rouge_france) .2em;
+}
+
+#draw_card_loto:hover {
+    box-shadow: var(--light_rouge_france) 4px 4px 20px;
+    border: solid var(--light_bleu_france) .2em;
+}
+
+.wins_balls-loto,
+.wins_balls-lotoSecondDraw {
+    background-color: var(--bleu_france)
+}
+
+#iconSeparator {
+    background-color: unset;
+    color: inherit;
+    border-radius: unset;
+    box-shadow: unset;
+}
+
+.win_luckyNumber {
+    background-color: var(--rouge_france);
+}
+
+.title-secondDraw {
+    grid-row: 4;
+    grid-column: span 7;
+}
+
+.secondDraw {
+    grid-row: 5;
+    grid-column: span 7;
+    display: flex;
+}
+
+.else_win_looseSecondDraw {
+    grid-row: 6;
+}
+
+/* EUROMILLIONS */
+
+#draw_card_euromillions {
+    box-shadow: var(--bleu_europe) 4px 4px 20px;
+    border: solid var(--or_euromillions) .2em;
+}
+
+#draw_card_euromillions:hover {
+    box-shadow: var(--light_or_euromillions) 4px 4px 20px;
+    border: solid var(--light_bleu_europe) .2em;
+}
+
+.wins_balls-euromillions {
+    background-color: var(--bleu_europe);
+}
+
+.wins_stars {
+    padding-top: .2em;
+    line-height: 3em;
+    background-image: url("../medias/gold-star.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}

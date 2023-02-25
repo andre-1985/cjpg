@@ -1,0 +1,173 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Résultats de vos numéros euromillions{% endblock %}
+
+{% block body %}
+    <div class="container-column">
+        <div class="user_selection" id="user_selection-euromillionsCard">
+            <h2>votre sélection euromillions</h2>
+            <div class="user_selection-numbers" id="user_selection-euromillions">
+                {% if userSelection.userBalls is defined %}
+                    {% for ballSelection in userSelection.userBalls %}
+                        <div class="wins_balls-euromillions"><p>{{ ballSelection }}</p></div>
+                    {% endfor %}
+                {% endif %}
+                {% if userSelection.userStars is defined %}
+                    {% for starSelection in userSelection.userStars %}
+                        <div class="table-win_stars"><p>{{ starSelection }}</p></div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        <table class="userResultTable" id="userResultTable-euromillions">
+            <thead>
+                <tr>
+                    <th>Tirage<br>N°</th>
+                    <th>Jour<br>de tirage</th>
+                    <th>Date<br>de tirage</th>
+                    <th>Boule<br>N°1</th>
+                    <th>Boule<br>N°2</th>
+                    <th>Boule<br>N°3</th>
+                    <th>Boule<br>N°4</th>
+                    <th>Boule<br>N°5</th>
+                    <th>Etoile<br>N°1</th>
+                    <th>Etoile<br>N°2</th>
+                    <th>Boules<br>gagnantes</th>
+                    <th>Etoile<br>gagnantes</th>
+                    <th>Gagnants<br>au rang 1<br>en France</th>
+                    <th>Gagnants<br>au rang 1<br>en Europe</th>
+                    <th>Montant de<br>la cagnotte<br>(si remporter)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for key, userSelectionResult in userSelectionResults %}
+                    {% set countTheadResult = userSelectionResult|length %}
+                    {% set divBall %}
+                        <div class="table_icon-ball-euromillions"></div>
+                    {% endset %}
+                    {% set divStar %}
+                        <div class="table_icon-star"></div>
+                    {% endset %}
+                    <tr class="euromillions-resultTitleRow">
+                        {% if key|length > 19 %}
+                            {% set countBalls = key|slice(12, 1) %}
+                            {% set countStars = key|slice(14, 1) %}
+                            <th colspan="15">
+                                <div>
+                                    <p>{{ countTheadResult }} tirage(s) avec {{ countBalls }} {{ divBall }} + {{ countStars }} {{ divStar }} gagnants</p>
+                                </div>
+                            </th>
+                        {% elseif key|length == 19 and key|slice(14, 1) == 's' %}
+                            {% set countStars = key|slice(12, 1) %}
+                            <th colspan="15">
+                                <div>
+                                    <p>{{ countTheadResult }} tirage(s) avec {{ countStars }} {{ divStar }} gagnants</p>
+                                </div>
+                            </th>
+                        {% else %}
+                            {% set countBalls = key|slice(12, 1) %}
+                            <th colspan="15">
+                                <div>
+                                    <p>{{ countTheadResult }} tirage(s) avec {{ countBalls }} {{ divBall }} gagnants</p>
+                                </div>
+                            </th>
+                        {% endif %}
+                    </tr>
+                    {% for selectionResult in userSelectionResult %}
+                        <tr>
+                            <td>{{ selectionResult.completeDraw.id }}</td>
+                            <td>{{ selectionResult.completeDraw.drawDay }}</td>
+                            <td>{{ selectionResult.completeDraw.drawDate }}</td>
+                            <td>
+                                {% set classWinloose = 'table-loose_balls-euromillions' %}
+                                {% if userSelection.userBalls is defined %}
+                                    {% if selectionResult.completeDraw.ball1 in userSelection.userBalls %}
+                                        {% set classWinloose = 'table-win_balls-euromillions' %}
+                                    {% endif %}
+                                {% endif %}
+                                <div class="{{ classWinloose }}">
+                                    <p>{{ selectionResult.completeDraw.ball1 }}</p>
+                                </div>
+                            </td>
+                            <td>
+                                {% set classWinloose = 'table-loose_balls-euromillions' %}
+                                {% if userSelection.userBalls is defined %}
+                                    {% if selectionResult.completeDraw.ball2 in userSelection.userBalls %}
+                                        {% set classWinloose = 'table-win_balls-euromillions' %}
+                                    {% endif %}
+                                {% endif %}
+                                <div class="{{ classWinloose }}">
+                                    <p>{{ selectionResult.completeDraw.ball2 }}</p>
+                                </div>
+                            </td>
+                            <td>
+                                {% set classWinloose = 'table-loose_balls-euromillions' %}
+                                {% if userSelection.userBalls is defined %}
+                                    {% if selectionResult.completeDraw.ball3 in userSelection.userBalls %}
+                                        {% set classWinloose = 'table-win_balls-euromillions' %}
+                                    {% endif %}
+                                {% endif %}
+                                <div class="{{ classWinloose }}">
+                                    <p>{{ selectionResult.completeDraw.ball3 }}</p>
+                                </div>
+                            </td>
+                            <td>
+                                {% set classWinloose = 'table-loose_balls-euromillions' %}
+                                {% if userSelection.userBalls is defined %}
+                                    {% if selectionResult.completeDraw.ball4 in userSelection.userBalls %}
+                                        {% set classWinloose = 'table-win_balls-euromillions' %}
+                                    {% endif %}
+                                {% endif %}
+                                <div class="{{ classWinloose }}">
+                                    <p>{{ selectionResult.completeDraw.ball4 }}</p>
+                                </div>
+                            </td>
+                            <td>
+                                {% set classWinloose = 'table-loose_balls-euromillions' %}
+                                {% if userSelection.userBalls is defined %}
+                                    {% if selectionResult.completeDraw.ball5 in userSelection.userBalls %}
+                                        {% set classWinloose = 'table-win_balls-euromillions' %}
+                                    {% endif %}
+                                {% endif %}
+                                <div class="{{ classWinloose }}">
+                                    <p>{{ selectionResult.completeDraw.ball5 }}</p>
+                                </div>
+                            </td>
+                            <td>
+                                {% set classWinloose = 'table-loose_stars' %}
+                                {% if userSelection.userStars is defined %}
+                                    {% if selectionResult.completeDraw.star1 in userSelection.userStars %}
+                                        {% set classWinloose = 'table-win_stars' %}
+                                    {% endif %}
+                                {% endif %}
+                                <div class="{{ classWinloose }}">
+                                    <p>{{ selectionResult.completeDraw.star1 }}</p>
+                                </div>
+                            </td>
+                            <td>
+                                {% set classWinloose = 'table-loose_stars' %}
+                                {% if userSelection.userStars is defined %}
+                                    {% if selectionResult.completeDraw.star2 in userSelection.userStars %}
+                                        {% set classWinloose = 'table-win_stars' %}
+                                    {% endif %}
+                                {% endif %}
+                                <div class="{{ classWinloose }}">
+                                    <p>{{ selectionResult.completeDraw.star2 }}</p>
+                                </div>
+                            </td>
+                            <td>{{ selectionResult.completeDraw.ascendingWinningBalls|trim('-') }}</td>
+                            <td>{{ selectionResult.completeDraw.ascendingWinningStars|trim('-') }}</td>
+                            <td>{{ selectionResult.completeDraw.numberOfWinnerInRank1InFrance }}</td>
+                            <td>{{ selectionResult.completeDraw.numberOfWinnerInRank1InEurope }}</td>
+                            {% if selectionResult.completeDraw.rankReport1 > 0 %}
+                                <td>{{ selectionResult.completeDraw.rankReport1|number_format(0, ',', ' ') }} eur</td>
+                            {% else %}
+                                <td>non remportée</td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

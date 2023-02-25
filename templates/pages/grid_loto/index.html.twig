@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CJPG - Essayez vos numéros Loto{% endblock %}
+
+{% block body %}
+<div data-turbo="false" class="container-column">
+    {{ component('explication_text_grid_loto') }}
+    {{ form_start(form, { 'attr': { 'id': 'user-grid_loto-form', 'novalidate': 'novalidate' } }) }}
+        <div id="balls-grid">
+            {% for chkBall in form.gridLoto.userBallsSelection %}
+                <div class="ball-loto">
+                    {{ form_widget(chkBall, { 'attr': { 'class': 'checkbox-ball-loto' } }) }}
+                    {{ form_label(chkBall, null, { 'label_attr': { 'class': 'label-ball-loto' }}) }}
+                </div>
+            {% endfor %}
+        </div>
+        <div id="luckynums-grid">
+            {% for chkLuckynum in form.gridLoto.userLuckyNumberSelection %}
+                <div class="luckynum-loto">
+                    {{ form_widget(chkLuckynum, { 'attr': { 'class': 'checkbox-luckynum-loto' } }) }}
+                    {{ form_label(chkLuckynum, null, { 'label_attr': { 'class': 'label-lucky-number' }}) }}
+                </div>
+            {% endfor %}
+        </div>
+        <div id="validate-grid-loto">
+            {{ form_widget(form.validate, { 'attr': { 'class': 'validate-btn-loto' } }) }}
+        </div>
+    {{ form_end(form) }}
+</div>
+{#<script src="{{ asset("js/scriptGridLoto.js") }}"></script>#}
+{% endblock %}

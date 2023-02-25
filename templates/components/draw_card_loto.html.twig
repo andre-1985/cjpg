@@ -1,0 +1,48 @@
+<a href="{{ path('app_draw_loto') }}" class="draw_card" id="draw_card_loto">
+    <h4 class="date-card">{{ this.drawLoto.drawDay }}<br>{{ this.drawLoto.drawDate }}</h4>
+    <h4 class="draw_id-card">Tirage<br>N° {{ this.drawLoto.id }}</h4>
+
+    {% set winBalls = this.drawLoto.ascendingWinningCombination %}
+    {% set balls = winBalls|split('-') %}
+
+    {% for ball in balls %}
+        <div class="wins_balls-loto">{{ ball }}</div>
+    {% endfor %}
+
+    <div class="win_luckyNumber" id="iconSeparator">+</div>
+
+    <div class="win_luckyNumber">{{ this.drawLoto.luckyNumber }}</div>
+
+    {% if this.drawLoto.rankReport1 == 0 %}
+        <p class="else_win_loose">
+            Cagnotte non remportée
+        </p>
+    {% else %}
+        <p class="else_win_loose">
+            Cagnotte remportée : {{ this.drawLoto.rankReport1|number_format(0, ',', ' ') }} €
+        </p>
+    {% endif %}
+
+    {% if this.drawLoto.ascendingWinningCombinationSecondDraw %}
+    <h5 class="title-secondDraw">Second tirage</h5>
+    <div class="secondDraw">
+        {% set ballsSecondDraw = this.drawLoto.ascendingWinningCombinationSecondDraw|split('-') %}
+
+        {% for ballSecondDraw in ballsSecondDraw %}
+            <div class="wins_balls-lotoSecondDraw">{{ ballSecondDraw }}</div>
+        {% endfor %}
+    </div>
+
+        {% if this.drawLoto.rankReport1SecondDraw == 0 %}
+            <p class="else_win_looseSecondDraw">
+                Cagnotte second tirage non remportée
+            </p>
+        {% else %}
+            <p class="else_win_looseSecondDraw">
+                Cagnotte second tirage remportée : {{ this.drawLoto.rankReport1SecondDraw|number_format(0, ',', ' ') }} €
+            </p>
+        {% endif %}
+    {% endif %}
+</a>
+
+

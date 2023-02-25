@@ -1,0 +1,41 @@
+.game_card {
+    width: 30em;
+    height: 20em;
+    border-radius: .5em;
+    box-shadow: .1em .1em 1em black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1em auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.game_card_title {
+    font-size: 3em;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    text-align: center;
+    width: 100%;
+}
+
+/* LOTO */
+
+#game_card_loto {
+    background-image: url("../medias/franceFlag.png");
+}
+
+#game_card_loto div {
+    color: var(--bleu_france);
+}
+
+/* EUROMILLIONS */
+
+#game_card_euromillions {
+    background-image: url("../medias/europeFlag.png");
+}
+
+#game_card_euromillions div {
+    color: var(--blanc_france);
+    font-family: 'Metropolis-Bold', 'Courier New', Courier, monospace;
+}
